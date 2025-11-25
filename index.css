@@ -1,0 +1,134 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background-color: lightblue;
+  align-items: center;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mainView {
+  box-shadow: black 5px 5px 10px;
+  background-color: white;
+  border: 2px solid black;
+  margin: 10px;
+  margin-top: 100px;
+  padding: 40px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: auto;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+i {
+  color: darkgray;
+}
+
+#inputButton {
+  border: 2px solid black;
+  background-color: whitesmoke;
+  color: black;
+
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 25px;
+  border-radius: 0.75em;
+
+  transition: 0.3s;
+}
+
+#inputButton:hover {
+  background-color: lightgray;
+}
+
+#inputButton:active {
+  transition: 0.1s;
+  background-color: black;
+  color: white;
+}
+
+/* SNOWFLAKES */
+#snowflakes {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: -1;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+
+  opacity: 0%;
+  width: 0px;
+  animation: snowflakeAnim 20s;
+
+  translate: -50% -50%;
+}
+@keyframes snowflakeAnim {
+  0% {
+    width: 30px;
+    opacity: 0%;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    width: 150px;
+    opacity: 0;
+    transform: translate(0, 500px) rotate(0.5turn);
+  }
+}
+
+/* Borrowed from https://css-loaders.com (slightly modified) */
+#loadingAnimation {
+  margin-top: 20px;
+
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: black transparent;
+  animation: l1 1s infinite;
+}
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+/* Responsive for desktop - when screen is large, the website adjusts to look better */
+@media screen and (min-width: 800px) {
+  .header {
+    font-size: 50px;
+    font-weight: unset;
+  }
+
+  #mainView {
+    margin-top: unset;
+    margin: 30px;
+    width: 70%;
+    padding: 50px 30px;
+  }
+}

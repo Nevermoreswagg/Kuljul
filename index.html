@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/x-icon" href="snowflake.svg" />
+    <title>Secret Santa</title>
+  </head>
+  <body>
+    <div id="snowflakes"></div>
+    <div id="mainView">
+      <div class="header">Secret Santa</div>
+      <p>
+        Welcome! This is where you recieve your target for Secret Santa. Just
+        press the button, and you will see the person that you will give a
+        christmas present to.<br /><br /><i
+          >Note: This uses an API built on Google Apps Script, which can be
+          buggy. If the fetch fails, reload and try again.</i
+        >
+      </p>
+      <p>
+        You have opened a URL with the ID:<br />
+        <b id="idContainer">[ID NOT FOUND]</b>
+      </p>
+      <!-- This content cycles between different views depending on what state the website is in -->
+      <div>
+        <input
+          id="inputButton"
+          type="button"
+          value="Recieve name"
+          onclick="onGetName()"
+        />
+        <div id="loadingAnimation" class="hidden"></div>
+        <div id="resultContent" class="hidden">
+          <p>Hello [santa]!</p>
+          <p>You will be giving a present to: [target]</p>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
