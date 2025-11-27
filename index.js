@@ -53,10 +53,10 @@ async function onGetName() {
                 result.innerHTML = `<p>Backend error: ${answerJson.message}</p>`;
             }
         } else {
-            result.innerHTML = `<p>Error in GET, please contact the organizer or try again later.</p><br/><br><i>Full error message: ${resp.text()}</i>`;
+            result.innerHTML = `<p>Error in GET, please contact the organizer or try again later.</p><br/><br/><i>Full error message: ${resp.text()}</i>`;
         }
     } catch (e) {
-        result.innerHTML = `<p>Error in script. This is usually caused by the web API being shaky, try reloading and clicking again.<br/><br><i>Full error message: ${e.message}</i></p>`;
+        result.innerHTML = `<p>Error in script. This is usually caused by the web API being shaky, try reloading and clicking again.<br/><br/><i>Full error message: ${e.message}</i></p>`;
     }
 
     // Toggle visibility of button/content
